@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+* { /* Configurações gerais, fazer imagens ocuparem a tela toda */
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body { /* Responsividade */
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+body { /* Plano de fundo */
+    background: url(../imagens/fundo-madeira.jpg) no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main { /* Responsividade */
+    height: 100vh;
+    position: relative;
+}
+
+section#telefone { /* Para ajustar o celular ao centro */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Como o pixel inicial está exatamente em metade da tela, usamos o translate para inverter, deixando a section exatamente no meio da tela. Lembrando que o container de fora precisa ter position relativo, e o interno, absolute */
+    height: 627px;
+    width: 311px;
+    background: url(../imagens/frame-iphone.png) no-repeat;
+}
+
+iframe#tela { /* Imagem dentro do celular */
+    position: relative;
+    top: 80px;
+    left: 22.7px;
+    width: 267px;
+    height: 471px;
+}
+
+section#redes-sociais {
+    text-align: right; /* Para deixar os ícones do lado direito da tela */
+}
+
+section#redes-sociais img {
+    width: 50px; /* Quando diminui a largura para 50px, a altura já se auto ajusta de forma proporcional */
+    margin: 10px; /* Para afastar os ícones */
+    border-radius: 50%; /* Para deixar os ícones redondos, deixa as bordas redondas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Adiciona sombra */
+    box-sizing: border-box; /* Para a borda passar a fazer parte da caixa/objeto */
+}
+
+section#redes-sociais img:hover {
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Para fazer a borda destacar quando passar o seletor/mouse */
+    transform: translate(-3px, -3px); /* Para fazer o ícone levantar, se mexer ao passar o seletor/mouse */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6); /* Fazer sombra quando o ícone levantar no transform */
+    transition: transform .3s; /* Para demorar um pouco para fazer o transform, movimentar o ícone ao passar o seletor/mouse */
+}
